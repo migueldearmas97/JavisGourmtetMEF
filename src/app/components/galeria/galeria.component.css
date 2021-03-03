@@ -1,0 +1,16 @@
+.customBackground {
+    /* padding-top: 90px;
+    padding-bottom: 90px; */
+    /* background-color: rgb(224, 223, 202); */
+    background-image: url("../../../assets/images/background1.jpg");
+}
+
+.customX {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.customSectionGaleria {
+    font-family: "Montserrat", sans-serif;
+    color: #67757c;
+    font-weight: 300;
+}

@@ -1,0 +1,37 @@
+.custom-aMiguel {
+    color: #67757c;
+}
+
+.nav-pills .nav-link.active,
+.nav-pills .show>.nav-link {
+    color: #fff;
+    background-color: #67757c;
+}
+
+.customSectionMenu {
+    font-family: "Montserrat", sans-serif;
+    color: #67757c;
+    font-weight: 300;
+}
+
+.show-grid {
+    margin-bottom: 10px;
+    padding: 0 15px;
+}
+
+.show-grid [class^=col-] {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 1px solid #b1b8bb;
+    background-color: #e9edf2;
+}
+
+.customBackground {
+    padding-top: 90px;
+    padding-bottom: 90px;
+    background-image: url("../../../assets/images/background4.jpg");
+}
+
+.customX {
+    background-color: rgba(255, 255, 255, 0.5);
+}

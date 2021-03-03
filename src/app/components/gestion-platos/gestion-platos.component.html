@@ -1,0 +1,87 @@
+<br>
+<br>
+<br>
+<br>
+<div class="container">
+
+
+    <div class="row animated fadeIn fast" *ngIf="loading">
+
+        <div class="col-12">
+
+            <div class="alert alert-info text-center">
+                <h4 class="alert-heading">Cargando</h4>
+                <i class="fa fa-spin fa-refresh fa-2x"></i>
+                <p class="mb-0">Por favor espere</p>
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="row" *ngIf="!loading">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-8">
+                            <h4 class="card-title">Platos ({{meals.length}})</h4>
+                            <h6 class="card-subtitle">Platos registrados en mi aplicación</h6>
+                        </div>
+
+                        <div class="col">
+                            <div class="text-right">
+                                <button routerLink="/plato/nuevo" class="btn btn-primary">
+                            Crear
+                             </button>
+                            </div>
+
+                        </div>
+                        <br>
+                    </div>
+
+
+                    <div class="table-responsive">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Nombre</th>
+                                    <th>Ingredientes</th>
+                                    <th>Dia de la semana</th>
+
+                                    <th>Foto</th>
+                                    <th class="text-nowrap">Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let item of meals;let i=index">
+                                    <td> <input type="text" class="form-control" placeholder="Nombre" [(ngModel)]="item.name" /></td>
+                                    <td> <input type="text" class="form-control" placeholder="Ingredientes" [(ngModel)]="item.ingredients" /></td>
+                                    <td> <input type="text" class="form-control" placeholder="Dia de la semana" [(ngModel)]="item.dayOfWeek" /></td>
+                                    <td> <img [src]="item.img|imagen" [alt]="item.name" class="w100"></td>
+
+
+
+                                    <td class="text-nowrap ">
+                                        <a routerLink="/plato/{{item._id}}" data-toggle="tooltip" data-original-title="Editar">
+                                            <i class="fa fa-pencil text-inverse m-r-10">
+
+                                             </i> </a>
+                                        <a data-toggle="tooltip" data-original-title="Borrar" (click)="deleteMeal(item)">
+                                            <i class="fa fa-close text-danger">
+
+                                            </i> </a>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

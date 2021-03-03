@@ -1,0 +1,52 @@
+.animated {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+.fast {
+    -webkit-animation-duration: 0.4s;
+    animation-duration: 0.4s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+.custom1 {
+    font-size: 21px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.fadeIn {
+    animation-name: fadeIn;
+}
+
+.img-avatar {
+    height: 400px;
+    width: 300px;
+}
+
+.w100 {
+    width: 100px;
+}
+
+.w50 {
+    width: 50px;
+}
+
+.galleryWH {
+    width: 1200px;
+    height: 800px;
+}
+
+.w1000x800 {
+    height: 300px;
+}

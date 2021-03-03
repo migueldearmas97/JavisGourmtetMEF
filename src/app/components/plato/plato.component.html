@@ -1,0 +1,110 @@
+<div class="container">
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+
+    <h1>Plato</h1>
+    <hr>
+    <div class="row text-right">
+        <div class="col">
+            <button class="btn btn-danger" routerLink="/gestion-platos">
+            <i class="fa fa-arrow-left"></i>
+            Regresar
+          </button>
+        </div>
+    </div>
+
+    <div class="row animated fadeIn faster">
+        <div class="col">
+
+            <form id="mealForm" (ngSubmit)="saveMeal()" [formGroup]="mealForm">
+
+                <div class="form-group">
+                    <label class="custom1">Name</label>
+                    <input type="text" class="form-control" placeholder="Name" name="name" formControlName="name">
+
+                </div>
+                <div class="form-group">
+                    <label class="custom1">Ingredients</label>
+                    <input type="text" class="form-control" placeholder="Ingredients" name="ingredients" formControlName="ingredients">
+
+                </div>
+                <div class="form-group">
+                    <label class="custom1">DayOfWeek</label>
+                    <select class="form-control" name="dayOfWeek" formControlName="dayOfWeek">
+                        <option>Monday</option>
+                        <option>Tuesday</option>
+                        <option>Wednesday</option>
+                        <option>Thursday</option>
+                        <option>Friday</option>
+                    </select>
+
+                </div>
+                <div class="form-group">
+                    <label class="custom1">Menu</label>
+                    <select class="form-control" name="menu" formControlName="menu">
+                                    
+                                    <option *ngFor="let menu of menus"
+                                        [value]="menu._id">
+                                        {{ menu.name }}
+                                    </option>
+                                </select>
+
+                </div>
+                <div class="form-group">
+                    <label class="custom1">Imagen del usuario</label>
+
+                    <img *ngIf="imgSource" [src]="imgSource|imagen" class="img-avatar">
+                    <img *ngIf="imgTemp" [src]="imgTemp" style="height: 400px;
+                    width: 300px">
+
+                    <input type="file" class="form-control" (change)="cambiarImagen($event.target.files[0])">
+
+                </div>
+
+                <br>
+                <br>
+
+
+
+
+
+
+                <div class="row">
+                    <div class="col text-danger">
+                        <p *ngIf="invalidField('name')">The name is required</p>
+                        <p *ngIf="invalidField('ingredients')">The ingredients is required</p>
+                        <p *ngIf="invalidField('dayOfWeek')">The dayOfWeek is required</p>
+                        <p *ngIf="invalidField('menu')">The menu is required</p>
+
+
+
+                    </div>
+                </div>
+
+
+
+
+
+
+
+                <hr>
+                <div class="form-group text-center">
+                    <button type="submit" class="btn btn-primary w-25">
+                <i class="fa fa-save"></i>
+                Guardar
+              </button>
+                </div>
+
+
+            </form>
+
+
+        </div>
+    </div>
+
+
+</div>

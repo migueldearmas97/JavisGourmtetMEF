@@ -1,0 +1,67 @@
+<div class="container">
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+
+    <h1>Oferta</h1>
+    <hr>
+    <div class="row text-right">
+        <div class="col">
+            <button class="btn btn-danger" routerLink="/administrar">
+            <i class="fa fa-arrow-left"></i>
+            Regresar
+          </button>
+        </div>
+    </div>
+
+    <div class="row animated fadeIn faster">
+        <div class="col">
+
+            <form id="offerForm" (ngSubmit)="saveOffer()" [formGroup]="offerForm">
+
+                <div class="form-group">
+                    <label class="custom1">Description</label>
+                    <input type="text" class="form-control" placeholder="Description" name="description" formControlName="name">
+
+                </div>
+                <div class="form-group">
+                    <label class="custom1">Price</label>
+                    <input type="number" class="form-control" placeholder="Price" name="price" formControlName="price">
+
+                </div>
+                <div class="row">
+                    <div class="col text-danger">
+                        <p *ngIf="invalidField('name')">The name is required</p>
+
+                        <p *ngIf="invalidField('price')">The price is required</p>
+
+
+                    </div>
+                </div>
+
+
+
+
+
+
+
+                <hr>
+                <div class="form-group text-center">
+                    <button type="submit" class="btn btn-primary w-25">
+                <i class="fa fa-save"></i>
+                Guardar
+              </button>
+                </div>
+
+
+            </form>
+
+
+        </div>
+    </div>
+
+
+</div>

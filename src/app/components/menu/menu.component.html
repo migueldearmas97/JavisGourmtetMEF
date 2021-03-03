@@ -1,0 +1,141 @@
+<br>
+
+
+
+
+<div class="customBackground animated fadeIn ">
+    <div class="customX">
+        <div class="container ">
+
+
+
+            <div class="customSectionMenu">
+                <div class="row">
+
+                    <div class="col-md-8">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title" *ngIf="menu">Our dishes (menu: {{menu.name}})</h4>
+                                <ul class="nav nav-pills m-t-30  m-b-30">
+                                    <li class=" nav-item "> <a href="#navpills2-1" class="nav-link active custom-aMiguel" data-toggle="tab" aria-expanded="false">Lunes</a> </li>
+                                    <li class=" nav-item"> <a href="#navpills2-2" class="nav-link custom-aMiguel" data-toggle="tab" aria-expanded="false">Martes</a> </li>
+                                    <li class=" nav-item"> <a href="#navpills2-3" class="nav-link custom-aMiguel" data-toggle="tab" aria-expanded="false">Miercoles</a> </li>
+                                    <li class="nav-item"> <a href="#navpills2-4" class="nav-link custom-aMiguel" data-toggle="tab" aria-expanded="false">Jueves</a> </li>
+                                    <li class="nav-item"> <a href="#navpills2-5" class="nav-link custom-aMiguel" data-toggle="tab" aria-expanded="true">Viernes</a> </li>
+                                </ul>
+                                <div class="tab-content br-n pn">
+                                    <div id="navpills2-1" class="tab-pane active">
+                                        <div class="row show-grid " *ngFor="let item of mealsOfMonday">
+
+                                            <div class="col-md-4"> <img [src]="item.img|imagen" class="img-responsive thumbnail m-r-15"> </div>
+                                            <div class="col-md-8">
+                                                <p>
+                                                    <br/> {{item.name}}
+                                                    <br/> ({{item.ingredients}})</p>
+                                            </div>
+                                        </div>
+
+
+
+                                    </div>
+                                    <div id="navpills2-2" class="tab-pane">
+                                        <div class="row show-grid " *ngFor="let item of mealsOfTuesday">
+
+                                            <div class="col-md-4"> <img [src]="item.img|imagen" class="img-responsive thumbnail m-r-15"> </div>
+                                            <div class="col-md-8">
+                                                <p>
+                                                    <br/> {{item.name}}
+                                                    <br/> ({{item.ingredients}})</p>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                    <div id="navpills2-3" class="tab-pane">
+                                        <div class="row show-grid " *ngFor="let item of mealsOfWednesday">
+
+                                            <div class="col-md-4"> <img [src]="item.img|imagen" class="img-responsive thumbnail m-r-15"> </div>
+                                            <div class="col-md-8">
+                                                <p>
+                                                    <br/> {{item.name}}
+                                                    <br/> ({{item.ingredients}})</p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div id="navpills2-4" class="tab-pane">
+                                        <div class="row show-grid " *ngFor="let item of mealsOfThursday">
+
+                                            <div class="col-md-4"> <img [src]="item.img|imagen" class="img-responsive thumbnail m-r-15"> </div>
+                                            <div class="col-md-8">
+                                                <p>
+                                                    <br/> {{item.name}}
+                                                    <br/> ({{item.ingredients}})</p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div id="navpills2-5" class="tab-pane">
+                                        <div class="row show-grid " *ngFor="let item of mealsOfFriday">
+
+                                            <div class="col-md-4"> <img [src]="item.img|imagen" class="img-responsive thumbnail m-r-15"> </div>
+                                            <div class="col-md-8">
+                                                <p>
+                                                    <br/> {{item.name}}
+                                                    <br/> ({{item.ingredients}})</p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Our offers</h4>
+                                <div class="demo-radio-button" *ngFor="let item of offers">
+                                    <p>
+                                        <br/> {{item.name}}
+                                        <br/> Price: {{item.price}}$ </p>
+                                    <!-- <label>{{item.name}}</label>
+                                    <p> Price: {{item.price}}</p> -->
+
+
+
+
+                                </div>
+
+                            </div>
+                        </div>
+
+
+                        <div class="button-box" *ngIf="menu">
+                            <button type="button" (click)="renderizarPagina()" class="btn btn-primary" routerLink="/pago/{{menu.name}}">Buy now!!!</button>
+
+                        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

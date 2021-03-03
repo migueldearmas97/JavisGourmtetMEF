@@ -1,0 +1,83 @@
+<!-- <h1 class="animated fadeIn fast">Sobre comics</h1> -->
+
+
+<br>
+<br>
+<br>
+
+
+<div class="customBackground animated fadeIn">
+    <div class="customX">
+        <div class="container ">
+
+
+            <div class="container-fluid">
+                <div class="customSectionPay">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="card-title" *ngIf="menu">Select the purchase (menu : {{menu.name}})</h4>
+
+                                    <h5 class="m-t-30">Select the offer</h5>
+                                    <select class="select2 form-control custom-select" style="width: 100%; height:36px;">
+                                        
+                                        <option  *ngFor="let item of offers">{{item.name}}</option>
+                                        
+                                   
+                                       
+                                    </select>
+                                    <h5 class="m-t-20">Select the dishes acord the offer selected</h5>
+                                    <select class="select2 m-b-10 select2-multiple" style="width: 100%" multiple="multiple" data-placeholder="Choose">
+                                        <optgroup label="Lunes" >
+                                            <option *ngFor="let item of mealsOfMonday">{{item.name}}</option>
+                                            <!-- <option value="HI">Ensalada</option> -->
+                                        </optgroup>
+                                        <optgroup label="Martes">
+                                            <option *ngFor="let item of mealsOfTuesday">{{item.name}}</option>
+                                            <!-- <option value="CA">Pechuga</option>
+                                            <option value="NV">Lasagna</option> -->
+                                           
+                                        </optgroup>
+                                        <optgroup label="Miercoles">
+                                            <option *ngFor="let item of mealsOfWednesday">{{item.name}}</option>
+                                            <!-- <option value="CA">Pechuga</option>
+                                            <option value="NV">Lasagna</option> -->
+                                           
+                                        </optgroup>
+                                        <optgroup label="Jueves">
+                                            <option *ngFor="let item of mealsOfThursday">{{item.name}}</option>
+                                            <!-- <option value="CA">Pechuga</option>
+                                            <option value="NV">Lasagna</option> -->
+                                           
+                                        </optgroup>
+                                        <optgroup label="Viernes">
+                                            <option *ngFor="let item of mealsOfFriday">{{item.name}}</option>
+                                            <!-- <option value="CA">Pechuga</option>
+                                            <option value="NV">Lasagna</option> -->
+                                           
+                                        </optgroup>
+                                       
+                                    </select>
+
+
+                                </div>
+
+                            </div>
+                            <div class="button-box col-6" *ngIf="menu">
+                                <button type="button" class="btn btn-primary" routerLink="/menu/{{menu.name}}">Back</button>
+                                <button type="button" class="btn btn-primary" routerLink="/home">Next</button>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>

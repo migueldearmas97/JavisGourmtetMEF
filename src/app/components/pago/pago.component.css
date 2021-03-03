@@ -1,0 +1,32 @@
+.customBackground {
+    padding-top: 90px;
+    padding-bottom: 90px;
+    background-image: url("../../../assets/images/background4.jpg");
+}
+
+.customX {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.customSectionPay {
+    font-family: "Montserrat", sans-serif;
+    color: #67757c;
+    font-weight: 300;
+}
+
+.customSelect {
+    font-family: "Montserrat", sans-serif;
+    color: #67757c;
+    font-weight: 300;
+}
+
+.select2-container--default .select2-selection--multiple .select2-selection__choice {
+    background-color: #515fe0;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 4px;
+    cursor: default;
+    float: left;
+    margin-right: 5px;
+    margin-top: 5px;
+    padding: 0 5px;
+}

@@ -1,0 +1,109 @@
+<br>
+<br>
+
+
+<div class="customBackground animated fadeIn">
+    <div class="customX">
+
+        <div class="container container-fluid">
+
+            <div class="customSectionGaleria">
+                <div class="row m-t-40">
+                    <div class="col-md-12">
+                        <h2 class="card-title">Gallery </h2>
+                        <h6 class="card-subtitle m-b-20 text-muted">These are our main dishes</h6>
+                    </div>
+                </div>
+                <div class="card-columns el-element-overlay">
+                    <div class="card" *ngFor="let item of meals">
+                        <div class="el-card-item">
+
+                            <div class="el-card-avatar el-overlay-1">
+                                <a class="image-popup-vertical-fit" [href]="item.img|imagen"> <img [src]="item.img|imagen" alt="user" /> </a>
+                            </div>
+                            <div class="el-card-content">
+                                <h3 class="box-title">{{item.name}}</h3> <small>({{item.ingredients}})</small>
+                                <br/> </div>
+
+                        </div>
+                    </div>
+                    <!-- <div class="card" *ngFor="let item of [1,2,3,4,5]">
+                        <div class="el-card-item">
+                            <div class="el-card-avatar el-overlay-1">
+                                <a class="image-popup-vertical-fit" href="assets/images/gallery01.jpg"> <img src="assets/images/gallery01.jpg" alt="user" /> </a>
+                            </div>
+                            <div class="el-card-content">
+                                <h3 class="box-title">Project title</h3> <small>subtitle of project</small>
+                                <br/> </div>
+                        </div>
+                    </div> -->
+                    <!-- <div class="card">
+                        <div class="el-card-item">
+                            <div class="el-card-avatar el-overlay-1">
+                                <a class="image-popup-vertical-fit" href="assets/images/gallery01.jpg"> <img src="assets/images/gallery01.jpg" alt="user" /> </a>
+                            </div>
+                            <div class="el-card-content">
+                                <h3 class="box-title">Project title</h3> <small>subtitle of project</small>
+                                <br/> </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="el-card-item">
+                            <div class="el-card-avatar el-overlay-1">
+                                <a class="image-popup-vertical-fit" href="assets/images/gallery01.jpg"> <img src="assets/images/gallery01.jpg" alt="user" /> </a>
+                            </div>
+                            <div class="el-card-content">
+                                <h3 class="box-title">Project title</h3> <small>subtitle of project</small>
+                                <br/> </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="el-card-item">
+                            <div class="el-card-avatar el-overlay-1">
+                                <a class="image-popup-vertical-fit" href="assets/images/gallery01.jpg"> <img src="assets/images/gallery01.jpg" alt="user" /> </a>
+                            </div>
+                            <div class="el-card-content">
+                                <h3 class="box-title">Project title</h3> <small>subtitle of project</small>
+                                <br/> </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="el-card-item">
+                            <div class="el-card-avatar el-overlay-1">
+                                <a class="image-popup-vertical-fit" href="assets/images/gallery01.jpg"> <img src="assets/images/gallery01.jpg" alt="user" /> </a>
+                            </div>
+                            <div class="el-card-content">
+                                <h3 class="box-title">Project title</h3> <small>subtitle of project</small>
+                                <br/> </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="el-card-item">
+                            <div class="el-card-avatar el-overlay-1">
+                                <a class="image-popup-vertical-fit" href="assets/images/gallery01.jpg"> <img src="assets/images/gallery01.jpg" alt="user" /> </a>
+                            </div>
+                            <div class="el-card-content">
+                                <h3 class="box-title">Project title</h3> <small>subtitle of project</small>
+                                <br/> </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="el-card-item">
+                            <div class="el-card-avatar el-overlay-1">
+                                <a class="image-popup-vertical-fit" href="assets/images/gallery01.jpg"> <img src="assets/images/gallery01.jpg" alt="user" /> </a>
+                            </div>
+                            <div class="el-card-content">
+                                <h3 class="box-title">Project title</h3> <small>subtitle of project</small>
+                                <br/> </div>
+                        </div>
+                    </div> -->
+
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

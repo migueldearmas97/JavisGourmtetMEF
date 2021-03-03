@@ -1,0 +1,78 @@
+<section class="menu cid-s7unjXAsyx" once="menu" id="menu1-0">
+
+
+
+
+    <nav class="navbar navbar-dropdown navbar-fixed-top navbar-expand-lg">
+        <div class="navbar-brand">
+            <span class="navbar-logo">
+                <a href="https://mobirise.com">
+                    <img src="assets/images/logo4.png" alt="Mobirise" title="" style="height: 5rem;">
+                </a>
+            </span>
+
+        </div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav nav-dropdown nav-right" data-app-modern-menu="true">
+                <li class="nav-item">
+                    <a class="nav-link link text-white display-4" [routerLink]="['home']">
+                        Home
+                    </a>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link link dropdown-toggle text-white display-4" data-toggle="dropdown-submenu" aria-expanded="false">
+                        Menu
+                    </a>
+                    <div class="dropdown-menu" *ngIf="defaultMenu">
+                        <a class="dropdown-item text-white display-4" routerLink="/menu/{{defaultMenu.name}}">{{defaultMenu.name}}<br></a>
+                        <div *ngIf="menus.length>1">
+                            <div *ngFor="let item of menus;let i=index">
+
+                                <div *ngIf="i>0">
+                                    <a class="text-white dropdown-item display-4" routerLink="/menu/{{item.name}}" aria-expanded="true">{{item.name}}</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link link text-white display-4" [routerLink]="['galeria']" aria-expanded="false">
+                        Gallery<br></a>
+                </li>
+                <li class="nav-item"><a class="nav-link link text-white display-4" [routerLink]="['contact']" aria-expanded="false">
+                        Contact us<br></a></li>
+
+
+
+
+            </ul>
+            <div class="icons-menu">
+                <a href="https://mobirise.com" target="_blank">
+                    <span class="p-2 mbr-iconfont socicon-twitter socicon"></span>
+                </a>
+                <a href="https://mobirise.com" target="_blank">
+                    <span class="p-2 mbr-iconfont socicon-facebook socicon"></span>
+                </a>
+                <a href="https://mobirise.com" target="_blank">
+                    <span class="p-2 mbr-iconfont socicon-youtube socicon"></span>
+                </a>
+                <a href="https://mobirise.com" target="_blank">
+                    <span class="p-2 mbr-iconfont socicon-behance socicon"></span>
+                </a>
+
+
+            </div>
+
+        </div>
+    </nav>
+</section>

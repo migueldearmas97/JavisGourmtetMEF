@@ -1,0 +1,79 @@
+<div class="container">
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+
+    <h1>Usuario</h1>
+    <hr>
+    <div class="row text-right">
+        <div class="col">
+            <button class="btn btn-danger" routerLink="/gestion-usuario">
+            <i class="fa fa-arrow-left"></i>
+            Regresar
+          </button>
+        </div>
+    </div>
+
+    <div class="row animated fadeIn faster">
+        <div class="col">
+
+            <form (ngSubmit)="saveUser()" [formGroup]="userForm" autocomplete="off">
+
+
+                <div class="form-group">
+                    <label class="custom1">Name</label>
+                    <input type="text" class="form-control" placeholder="Name" name="name" formControlName="name">
+
+                </div>
+                <div class="form-group">
+                    <label class="custom1">Password</label>
+                    <input type="password" class="form-control" placeholder="Password" name="password" formControlName="password">
+
+                </div>
+                <div class="form-group">
+                    <label class="custom1">Repeat Password</label>
+                    <input type="password" class="form-control" placeholder="Password" name="password" formControlName="password2">
+
+                </div>
+                <div class="form-group">
+                    <label class="custom1">Role</label>
+                    <input type="text" class="form-control" placeholder="Role" name="role" formControlName="role">
+
+                </div>
+
+                <div class="row">
+                    <div class="col text-danger">
+                        <p *ngIf="invalidField('name')">The name is required</p>
+                        <p *ngIf="invalidField('role')">The role is required</p>
+                        <p *ngIf="invalidField('password')">The password is required</p>
+                        <p *ngIf="notEqualsPassword()">The password not matching</p>
+
+                    </div>
+                </div>
+
+
+
+
+
+
+
+                <hr>
+                <div class="form-group text-center">
+                    <button type="submit" class="btn btn-primary w-25">
+                <i class="fa fa-save"></i>
+                Guardar
+              </button>
+                </div>
+
+
+            </form>
+
+
+        </div>
+    </div>
+
+
+</div>

@@ -6,7 +6,7 @@ import { PlatoModel } from '../../models/plato.model';
 import { PlatoService } from '../../services/plato.service';
 import { MenuAModel } from '../../models/menu-a.model';
 import { MenuService } from '../../services/menu.service';
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder,NgForm, Validators } from '@angular/forms';
 
 declare function customMigue();
 
@@ -33,9 +33,8 @@ export class PagoComponent implements OnInit {
 
   public PayForm = this.fb.group({
     offer: ['', Validators.required],
+    dayOfWeek: ['', Validators.required],
    
-    
-    
   });
   
   constructor(private ofertaService: OfertaService,  private fb: FormBuilder,private router:Router, private platoService: PlatoService, private activatedRoute: ActivatedRoute, private menuService: MenuService) {}
@@ -108,8 +107,14 @@ export class PagoComponent implements OnInit {
   }
   capturar(){
     console.log("1,2,3");
-    this.verSeleccion=this.opcionSeleccionado;
-    console.log(this.opcionSeleccionado);
+    console.log(this.PayForm.get('offer').value);
+    this.opcionSeleccionado=this.PayForm.get('offer').value;
+    // this.verSeleccion=this.opcionSeleccionado;
+    // console.log(this.opcionSeleccionado);
+  }
+  pay(){
+    console.log("Funcion de pagar");
+   
   }
  
   

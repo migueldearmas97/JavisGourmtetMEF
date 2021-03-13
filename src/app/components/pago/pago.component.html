@@ -20,15 +20,14 @@
                                     <h4 class="card-title" *ngIf="menu">Select the purchase (menu : {{menu.name}})</h4>
 
                                     <h5 class="m-t-30">Select the offer</h5>
-                                    <form id="PayForm" (ngSubmit)="capturar()" [formGroup]="PayForm">
-                                        <select class="select2 form-control custom-select" name="offer" formControlName="offer" style="width: 100%; height:36px;">
+                                    <form id="PayForm" (ngSubmit)="pay()" [formGroup]="PayForm">
+                                        <select class=" form-control " name="offer" formControlName="offer" (change)="capturar()">
+                                            <option></option>
+                                            <option   *ngFor="let offer of offers">{{offer.name}}</option>
                                       
-                                        <option  *ngFor="let item of offers">{{item.name}}</option>
-                                        
-                                        
-                                        
                                     </select>
-                                        <p>Haz seleccionado la opcion # {{PayForm.value|json}}</p>
+                                        <p>Haz seleccionado la opcion {{PayForm.value|json}}</p>
+                                        <p *ngIf="opcionSeleccionado=='superOferta' || opcionSeleccionado=='Oferta doble'">Hola mundo</p>
                                     </form>
                                     <h5 class="m-t-20">Select the dishes acord the offer selected</h5>
                                     <select class="select2 m-b-10 select2-multiple" style="width: 100%" multiple="multiple" data-placeholder="Choose">

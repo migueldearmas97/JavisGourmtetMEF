@@ -6,6 +6,7 @@ import { PlatoModel } from '../../models/plato.model';
 import { PlatoService } from '../../services/plato.service';
 import { MenuAModel } from '../../models/menu-a.model';
 import { MenuService } from '../../services/menu.service';
+import { FormBuilder, Validators } from '@angular/forms';
 
 declare function customMigue();
 
@@ -17,10 +18,12 @@ declare function customMigue();
 export class PagoComponent implements OnInit {
   public offers: OfertaModel[] = [];
   public offerSelected: OfertaModel;
+  public opcionSeleccionado: string;
+  public verSeleccion: string;
   public meals: PlatoModel[] = [];
- 
-
-
+  
+  
+  
   public mealsOfMonday: PlatoModel[] = [];
   public mealsOfTuesday: PlatoModel[] = [];
   public mealsOfWednesday: PlatoModel[] = [];
@@ -28,38 +31,45 @@ export class PagoComponent implements OnInit {
   public mealsOfFriday: PlatoModel[] = [];
   public menu: MenuAModel;
 
-  constructor(private ofertaService: OfertaService,private router:Router, private platoService: PlatoService, private activatedRoute: ActivatedRoute, private menuService: MenuService) {}
-
-  ngOnInit(): void {
+  public PayForm = this.fb.group({
+    offer: ['', Validators.required],
+   
+    
+    
+  });
   
+  constructor(private ofertaService: OfertaService,  private fb: FormBuilder,private router:Router, private platoService: PlatoService, private activatedRoute: ActivatedRoute, private menuService: MenuService) {}
+  
+  ngOnInit(): void {
+    
     customMigue();
     this.activatedRoute.params.subscribe(({name}) => this.getMenuByName(name));
     this.gettingOffers();
-
+    
   }
   gettingOffers(){
- 
+    
     this.ofertaService.cargarOfertas()
     .subscribe(resp => {
-  
-    this.offers = resp;
-  });
-
+      
+      this.offers = resp;
+    });
+    
   }
   getMenuByName(name: string){
-   
+    
     this.menuService.cargarMenus()
     .subscribe(resp => {
-   
-   this.extraerMenu(resp, name);
-  });
-
+      
+      this.extraerMenu(resp, name);
+    });
+    
   }
   getMealsByMenuId(id: string){
     this.meals.length = 0;
     this.platoService.cargarPlatos()
     .subscribe(resp => {
-   
+      
       resp.forEach(element => {
         if (element.menu == id){
           this.meals.push(element);
@@ -70,12 +80,12 @@ export class PagoComponent implements OnInit {
       this.extractMealsOfDayOfWeek(this.meals, 'Wednesday',  this.mealsOfWednesday);
       this.extractMealsOfDayOfWeek(this.meals, 'Thursday',  this.mealsOfThursday);
       this.extractMealsOfDayOfWeek(this.meals, 'Friday',  this.mealsOfFriday);
-  });
-  console.log(this.meals);
-  console.log('la comida del lunes es');
-  console.log(this.mealsOfThursday);
-  
-
+    });
+    console.log(this.meals);
+    console.log('la comida del lunes es');
+    console.log(this.mealsOfThursday);
+    
+    
   }
   extraerMenu(menus: MenuAModel[], name: string){
     menus.forEach(element => {
@@ -87,14 +97,20 @@ export class PagoComponent implements OnInit {
   }
   extractMealsOfDayOfWeek(meals: PlatoModel[], day: string, list: PlatoModel[]){
     list.length = 0;
-  
+    
     meals.forEach(element => {
       if (element.dayOfWeek == day){
-       
+        
         list.push(element);
       }
     });
-   
+    
   }
-
+  capturar(){
+    console.log("1,2,3");
+    this.verSeleccion=this.opcionSeleccionado;
+    console.log(this.opcionSeleccionado);
+  }
+ 
+  
 }

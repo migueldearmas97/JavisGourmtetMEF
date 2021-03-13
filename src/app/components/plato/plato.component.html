@@ -11,9 +11,9 @@
     <div class="row text-right">
         <div class="col">
             <button class="btn btn-danger" routerLink="/gestion-platos">
-            <i class="fa fa-arrow-left"></i>
-            Regresar
-          </button>
+                <i class="fa fa-arrow-left"></i>
+                Regresar
+            </button>
         </div>
     </div>
 
@@ -46,12 +46,12 @@
                 <div class="form-group">
                     <label class="custom1">Menu</label>
                     <select class="form-control" name="menu" formControlName="menu">
-                                    
-                                    <option *ngFor="let menu of menus"
-                                        [value]="menu._id">
-                                        {{ menu.name }}
-                                    </option>
-                                </select>
+                        
+                        <option *ngFor="let menu of menus"
+                        [value]="menu._id">
+                        {{ menu.name }}
+                    </option>
+                </select>
 
                 </div>
                 <div class="form-group">
@@ -59,7 +59,7 @@
 
                     <img *ngIf="imgSource" [src]="imgSource|imagen" class="img-avatar">
                     <img *ngIf="imgTemp" [src]="imgTemp" style="height: 400px;
-                    width: 300px">
+                width: 300px">
 
                     <input type="file" class="form-control" (change)="cambiarImagen($event.target.files[0])">
 
@@ -94,9 +94,9 @@
                 <hr>
                 <div class="form-group text-center">
                     <button type="submit" class="btn btn-primary w-25">
-                <i class="fa fa-save"></i>
-                Guardar
-              </button>
+                    <i class="fa fa-save"></i>
+                    Guardar
+                </button>
                 </div>
 
 
